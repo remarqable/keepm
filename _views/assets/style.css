@@ -1,0 +1,96 @@
+
+
+body {
+    background-color: #ffffff;
+    font-family: Nunito, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: rgb(245,246,252)
+}
+
+/* Custom styles for login and other buttons */
+.custom-button {
+    background-color: rgb(64, 63, 77); 
+    color: white; 
+    width: 100%;
+}
+
+
+
+/* Custom Google Sign-In button style */
+.google-signin-button {
+    background-color: white;
+    color: black;
+    margin-bottom: 10px;
+    width: 100%; /* Full width button */
+}
+
+/* Styling for form fields */
+.form-group {
+    margin-bottom: 10px; /* Space between each form field */
+}
+
+/* Styling for the 'Forgot Password' link */
+.forgot-password-link {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 0.9rem; /* Smaller font size for the link */
+}
+
+/* Header styling for login and other pages */
+.page-header {
+    font-size: 1.5rem; 
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Subtext styling under headers */
+.subtext {
+    font-size: 0.9rem; 
+    margin-bottom: 20px; 
+    text-align: left;
+}
+
+
+
+.label-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.label-container .label-text {
+    display: inline;
+}
+
+.label-container .edit-button {
+    display: none; /* Hide by default */
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle; /* Align with the label */
+}
+
+.label-container:hover .edit-button {
+    display: inline; /* Show on hover */
+}
+
+.fa {
+    font-size: 1em; /* Adjust size as needed */
+}
+
+.ok-button, .cancel-button {
+    
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.ok-button .fa {
+    color: green; /* Green color for OK/checkmark icon */
+
+}
+
+.cancel-button .fa {
+    color: red; /* Red color for Cancel/cross icon */
+}
+
+

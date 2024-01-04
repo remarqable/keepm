@@ -1,0 +1,1 @@
+psql -q -h localhost -U keepm -d keepmdb -f dbinit.sql
