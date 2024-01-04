@@ -9,9 +9,13 @@
 package main
 
 import (
+	"embed"
+	"html/template"
+	"io/fs"
 	_controllers "keepm/_controllers"
 	util "keepm/util"
 	"log"
+	"net/http"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
@@ -26,15 +30,22 @@ import (
 // 	}
 // }
 
+//go:embed _views/templates/**/*
+var templatesEmbed embed.FS
+
+//go:embed _views/assets/**/* _views/assets/*
+var staticEmbed embed.FS
+
 func main() {
 	log.Println("Starting keepm...")
 	router := gin.Default()
 
-	// Serve static files from the specified directory.
-	router.Static("/assets", "./_views/assets")
+	// Serve static files from the staticEmbed filesystem.
+	staticFS, _ := fs.Sub(staticEmbed, "_views/assets")
+	router.StaticFS("/assets", http.FS(staticFS))
 
-	// Load HTML templates from the specified glob pattern.
-	router.LoadHTMLGlob("_views/templates/**/*.html")
+	templ := template.Must(template.New("").ParseFS(templatesEmbed, "_views/templates/**/*.html"))
+	router.SetHTMLTemplate(templ)
 
 	// Set up cookie-based sessions using a secret from the util package.
 	router.Use(sessions.Sessions("session", cookie.NewStore(util.Secret)))

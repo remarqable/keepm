@@ -1,0 +1,8 @@
+build: keepm
+
+keepm:
+	@echo "Building for Docker/Linux"
+	go build -ldflags="-extldflags=-static" -tags netgo -o docker/keepm ../main.go
+
+clean:
+	@rm -rf docker/keepm

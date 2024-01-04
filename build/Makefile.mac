@@ -1,0 +1,8 @@
+build: keepm
+
+keepm:
+	@echo "Building for macOS"
+	go build -o docker/keepm ../main.go
+
+clean:
+	@rm -rf docker/keepm
