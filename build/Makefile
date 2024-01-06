@@ -29,12 +29,14 @@ build:
 
 docker:
 	@echo "Building docker image for keepm"
+	cp ../db/dbinit.sql .
 	@docker build --progress=plain -t keepm  -f keepm.dockerfile .	
+	rm dbinit.sql
 
 run:
 ifndef DOCKER_PS
 	@echo "Starting keepm container"
-	@docker run --name keepm -h keepm-docker -d  -p 5432:5432 -p 8080:8080  -t keepm
+	@docker run --name keepm -h keepm-docker -d -p 5432:5432 -p 8080:8080  -t keepm
 else
 	@echo  "Container keepm already running"
 endif

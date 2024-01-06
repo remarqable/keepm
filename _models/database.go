@@ -25,8 +25,7 @@ func DB() (*sql.DB, error) {
 	connectionString := `
 		host=localhost 
 		port=5432 
-		user=keepm 
-		password=keepm 
+		user=postgres
 		dbname=keepmdb 
 		sslmode=disable`
 

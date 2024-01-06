@@ -8,9 +8,10 @@ initdb /var/lib/postgresql/data &&\
 echo \"host all  all    0.0.0.0/0  md5\" >> /var/lib/postgresql/data/pg_hba.conf &&\
 echo \"listen_addresses='*'\" >> /var/lib/postgresql/data/postgresql.conf &&\
 pg_ctl start -D /var/lib/postgresql/data &&\
-psql -U postgres -c \"CREATE DATABASE keepmdb\" &&\
-psql -U postgres -c \"CREATE USER keepm WITH PASSWORD 'keepm';\" &&\
-psql -U postgres -c \"grant all privileges on database keepm to keepm;\""
+psql -U postgres -c \"CREATE DATABASE keepmdb;\""
+
+# Load data
+psql -U postgres -d keepmdb -f /root/dbinit.sql
 
 # Install and setup bash
 apk update \

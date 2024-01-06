@@ -6,5 +6,6 @@ EXPOSE 8080
 
 COPY keepm /root
 COPY start.sh /root
+COPY dbinit.sql /root
 WORKDIR /root
 CMD ["./start.sh"]
