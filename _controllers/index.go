@@ -2,6 +2,7 @@ package _controllers
 
 import (
 	"fmt"
+	"keepm/_models"
 	util "keepm/util"
 	"net/http"
 
@@ -17,9 +18,14 @@ func AppIsDown(c *gin.Context) {
 
 // IndexGet handles GET requests for the dashboard page.
 func IndexGet(c *gin.Context) {
-	fmt.Println("IndexGet")
 	session := sessions.Default(c)
 	user := session.Get(util.Username)
 	account := session.Get(util.AccountName)
-	c.HTML(http.StatusOK, "dashboard.html", gin.H{"content": "Dashboard...", "account": account, "user": user})
+	contact := new(_models.Contact)
+	contacts, _ := contact.GetAll(1)
+
+	c.HTML(http.StatusOK, "dashboard.html", gin.H{"content": "Dashboard...",
+		"account":  account,
+		"user":     user,
+		"contacts": contacts})
 }

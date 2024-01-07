@@ -21,27 +21,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">John Doe</th>
-                  <td>3M</td>
-                  <td>Systems Analyst</td>
-                  <td>612-385-9658</td>
-                  <td>johndoe@mmm.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">Micharl Carrington</th>
-                  <td>Target</td>
-                  <td>DBA</td>
-                  <td>612-895-7849</td>
-                  <td>mcarrington@target.com</td>
-                </tr>
-                <tr>
-                  <th scope="row">John Doe</th>
-                  <td>3M</td>
-                  <td>Systems Analyst</td>
-                  <td>612-385-9658</td>
-                  <td>johndoe@mmm.com</td>
-                </tr>
+                {{range $index, $contact := .contacts}}
+                    <tr>                     
+                      <td><a href="/contacts/{{ $contact.ID }}">{{ $contact.FirstName }}&nbsp; {{ $contact.LastName }}</a></td>
+                      <td>{{ $contact.Company }}</td>
+                      <td>{{ $contact.Title }}</td>                      
+                      <td>{{ $contact.Phone }}</td>
+                      <td>{{ $contact.Email }}</td>
+                      
+                      </tr>
+                {{end}}
+                
               </tbody>
             </table>
           </div>

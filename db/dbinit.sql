@@ -92,11 +92,10 @@ INSERT INTO "user" (account_id, email, hash, last_name, first_name, role, phone,
 -- contact
 \echo Loading sample data for table contact...
 INSERT INTO "contact" (account_id, first_name, last_name, company, title, phone, email, created_at, updated_at) VALUES
-(1, 'John', 'Doe', 'Company A', 'Manager', '1234567890', 'john.doe@companya.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'Jane', 'Doe', 'Company B', 'CEO', '0987654321', 'jane.doe@companyb.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'Jim', 'Beam', 'Company C', 'CTO', '1122334455', 'jim.beam@companyc.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'Jack', 'Daniels', 'Company D', 'CFO', '5566778899', 'jack.daniels@companyd.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'Jill', 'Valentine', 'Company E', 'COO', '7788991122', 'jill.valentine@companye.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'June', 'Summer', 'Company F', 'CMO', '9911223344', 'june.summer@companyf.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
+(1, 'Robert', 'Johnson', 'Tech Solutions', 'Manager', '415-555-1234', 'robert.johnson@techsolutions.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'Emily', 'Clark', 'Green Energy', 'CEO', '415-555-2345', 'emily.clark@greenenergy.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'Michael', 'Smith', 'Innovative Designs', 'CTO', '415-555-3456', 'michael.smith@innovativedesigns.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'Sarah', 'Miller', 'Smart Investments', 'CFO', '415-555-4567', 'sarah.miller@smartinvestments.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'James', 'Brown', 'Healthy Living', 'COO', '415-555-5678', 'james.brown@healthyliving.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'Jessica', 'Davis', 'Creative Media', 'CMO', '415-555-6789', 'jessica.davis@creativemedia.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 \echo Done.
