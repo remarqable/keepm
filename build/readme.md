@@ -12,7 +12,7 @@ docker build --progress=plain -t keepm  -f keepm.dockerfile .
 docker images  
 
 **Run container and verify**  
-docker run --name keepm -h keepm-docker -d  -p 5432:5432 -p 8080:8080  -t keepm  
+docker run --name keepm -h keepm-docker -d  -p 5432:5432 -p 80:80  -t keepm  
 docker ps  
 docker logs keepm  
 
@@ -23,7 +23,7 @@ psql -h localhost -U keepm -d keepm
 **Optionally attach with the running container**  
 docker exec -it keepm  /bin/bash  
 
-Open http://localhost:8080/  
+Open http://localhost/  
 
 
 docker tag <image id> asim95/keepm:latest

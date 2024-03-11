@@ -1,7 +1,7 @@
 FROM postgres:alpine
 
 # Expose ports for keepm web and and postgres db
-EXPOSE 8080
+EXPOSE 80
 #EXPOSE 5432
 
 COPY keepm /root

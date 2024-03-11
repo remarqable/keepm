@@ -60,5 +60,5 @@ func main() {
 	_controllers.PrivateRoutes(private)
 
 	// Start the HTTP server on port 8080.
-	router.Run(":8080")
+	router.Run(":80")
 }
