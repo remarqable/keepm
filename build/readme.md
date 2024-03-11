@@ -18,7 +18,7 @@ docker logs keepm
 
 **Connect with psql**  
 export PGPASSWORD=keepm  
-psql -h localhost -U keepm -d keepm  
+psql -h localhost -U keepm -d keepmdb  
 
 **Optionally attach with the running container**  
 docker exec -it keepm  /bin/bash  
@@ -26,7 +26,7 @@ docker exec -it keepm  /bin/bash
 Open http://localhost/  
 
 
-docker tag <image id> asim95/keepm:latest
-  357  docker push asim95/keepm
+docker tag <image id> remarqable/keepm:latest
+docker push remarqable/keepm
 
 
